@@ -1,0 +1,5 @@
+@use "./vars";
+// mettre ici la police du site
+body{
+    background-color: vars.$blue;
+}
