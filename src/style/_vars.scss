@@ -1,3 +1,4 @@
+@use 'sass:color';
 // Palette de base
 $blue:#34626A;
 $beige:#FFF4BD;
@@ -6,7 +7,10 @@ $pink:#A32B3A;
 $red:#570B17;
 // Palette de base 2
 $gray:#303B3B;
+$greenish:#1f3b3b;
 $green:#20CD8D;
 $white:#EFECEC;
 // $pink:#A32B3A;
 // $red:#570B17;
+$gray-light: color.scale($gray, $lightness: 5%);
+$gray-lightness: color.scale($gray, $lightness: 10%);

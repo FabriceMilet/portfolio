@@ -1,8 +1,8 @@
 import './AboutMe.scss'
 
-export default function AboutMe() {
+export default function AboutMe({className}) {
   return (
-    <div className="AboutMe">
+    <div className={className}>
       test AboutMe
     </div>
   )
