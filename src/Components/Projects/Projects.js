@@ -1,8 +1,8 @@
 import './Projects.scss'
 
-export default function Projects() {
+export default function Projects({className}) {
   return (
-    <div className="Projects">
+    <div className={className}>
       test Projects
     </div>
   )

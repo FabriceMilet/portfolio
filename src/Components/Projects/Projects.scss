@@ -1,4 +1,20 @@
+@use "../../style/vars";
 .Projects{
-    background-color: red;
-    height: 110vh;
+    // background-color: red;
+    height: 800px;
+    background-color: vars.$grayish;
+    // transition: background-color 1s;
+
+}
+.grayish{
+    background-color: vars.$grayish;
+    // transition: background-color 1s;
+}
+.gray{
+    background-color: vars.$gray;
+    // transition: background-color 1s;
+}
+.greenish{
+    background-color: vars.$greenish;
+    // transition: background-color 1s;
 }

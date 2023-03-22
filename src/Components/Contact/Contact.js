@@ -1,8 +1,8 @@
 import './Contact.scss'
 
-export default function Contact() {
+export default function Contact({className}) {
   return (
-    <div className="Contact">
+    <div className={className}>
       test Contact
     </div>
   )

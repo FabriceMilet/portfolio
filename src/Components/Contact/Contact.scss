@@ -1,4 +1,19 @@
+@use "../../style/vars";
 .Contact{
-    background-color: blue;
-    height: 110vh;
+    // background-color: blue;
+    height: 800px;
+    background-color: vars.$greenish;
+    // transition: background-color 1s;
+}
+.grayish{
+    background-color: vars.$grayish;
+    // transition: background-color 1s;
+}
+.gray{
+    background-color: vars.$gray;
+    // transition: background-color 1s;
+}
+.greenish{
+    background-color: vars.$greenish;
+    // transition: background-color 1s;
 }
