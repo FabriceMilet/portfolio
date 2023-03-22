@@ -1,8 +1,8 @@
 import './Home.scss'
 
-export default function Home() {
+export default function Home({className}) {
   return (
-    <div className="Home">
+    <div className={className}>
       <div className="Home-container">
             <span>Fabrice Milet</span> 
             <span>développeur web</span>

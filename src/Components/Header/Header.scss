@@ -1,7 +1,7 @@
 @use "../../style/vars";
 .Header{
-    // z-index: 1;
-    background-color: #818c8c33;
+    z-index: 10;
+    background-color: vars.$gray-lightness;
     height: 8% ;
     width: 100%;
     position: fixed;
@@ -38,5 +38,12 @@
     }
 }
 .scrolled {
-    background-color: #fff;
+    z-index: 10;
+    background-color: vars.$gray-light;
+    height: 8% ;
+    width: 100%;
+    position: fixed;
+    top: 0;
+    display:flex;
+    justify-content: space-around;
 }

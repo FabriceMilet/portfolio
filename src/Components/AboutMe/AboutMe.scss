@@ -1,4 +1,23 @@
+@use "../../style/vars";
 .AboutMe{
-    background-color: black;
-    height: 110vh;
+    // background-color: vars.$gray;
+    height: 800px;
+    background-color: vars.$gray;
+    // transition: background-color 1s;
+    // &-scrolled{
+    //     background-color: vars.$greenish;
+    // height: 110vh; 
+    // }
+}
+.grayish{
+    background-color: vars.$grayish;
+    // transition: background-color 1s;
+}
+.gray{
+    background-color: vars.$gray;
+    // transition: background-color 1s;
+}
+.greenish{
+    background-color: vars.$greenish;
+    // transition: background-color 1s;
 }
