@@ -1,6 +1,6 @@
 @use "./vars";
 @font-face {
-    font-family: 'Hariet';
+    font-family: 'Hariettext';
     src: url('../../public/fonts/harriet/HARRIETTEXTBOLD.woff2'),
      url('../../public/fonts/harriet/HARRIETTEXTBOLDITALIC.woff2'),
      url('../../public/fonts/harriet/HARRIETTEXTITALIC.woff2'),
@@ -9,6 +9,6 @@
      url('../../public/fonts/harriet/HARRIETTEXTREGULAR.woff2');
 }
 body{
-    font-family: 'Hariet';
+    font-family: 'Hariettext';
     // background-color: vars.$gray;
 }

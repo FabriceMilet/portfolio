@@ -1,13 +1,22 @@
 @use "../../style/vars";
 .AboutMe{
-    // background-color: vars.$gray;
     height: 800px;
     background-color: vars.$gray;
-    // transition: background-color 1s;
-    // &-scrolled{
-    //     background-color: vars.$greenish;
-    // height: 110vh; 
-    // }
+    &-presentation{
+        width: 80%;
+        margin: auto;
+        background-color: vars.$grayish-light;
+        padding: 1rem;
+        border-radius: 5px;
+        color:vars.$white ;
+        line-height: 1.6rem;
+        // font-weight: bold;
+        letter-spacing: 1px ;
+
+    }
+    & span {
+        color:vars.$green ;
+    }
 }
 .grayish{
     background-color: vars.$grayish;

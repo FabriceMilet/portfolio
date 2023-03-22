@@ -3,7 +3,7 @@ import Home from '../Home/Home';
 import AboutMe from '../AboutMe/AboutMe';
 import Projects from '../Projects/Projects';
 import Contact from '../Contact/Contact';
-import { Waypoint } from 'react-waypoint';
+// import { Waypoint } from 'react-waypoint';
 // import { useSpring, animated } from 'react-spring';
 import { useState } from 'react';
 import Header from '../Header/Header';
@@ -16,7 +16,6 @@ export default function App() {
   const [contactColor, setContactColor] = useState('')
   const [headerScrolled, setheaderScrolled] = useState(false)
 
- console.log(window.scrollY);
   const handleScroll = () => {
     if (window.scrollY < 100) {
       setHome('gray');
