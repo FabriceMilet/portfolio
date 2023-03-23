@@ -20,6 +20,7 @@ export default function AboutMe({ className }) {
       </div>
 
       <Canvas>
+      <ambientLight />
       <Logos />
       </Canvas>
     </div>

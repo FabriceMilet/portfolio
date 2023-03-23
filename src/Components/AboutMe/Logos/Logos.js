@@ -4,41 +4,44 @@ import { Vector2 } from "three";
 import Logo from "../Logo/Logo";
 
 export default function Logos() {
-    let t =0;
-    let [logos, updateLogos] = useState([{
-        x: 0,
-        y: 0,
-        index: 0
-    }])
+    // on initialise un tableau vide de logos et sa fonction updateLogos
+    let [logos, updateLogos] = useState([])
+    // on initialise un index qu'on utilisera dans la key du map plus tard
+    let [index, setIndex] = useState(0);
 // ici, on va gérer l'update des logos en fonction de la position de la souris
 const updatePositions =({x, y}) => {
+    // on regarde la distance entre le curseur et le dernier logo
     const distance = new Vector2(x,y).distanceTo(
-        new Vector2(logos.at(-1)?.x, logos.at(-1)?.y)
+        new Vector2([logos.length - 1]?.x, [logos.length - 1]?.y)
     )
-    // la distance correspond à la distance entre le pointeur et le logo et le 10 correspond au nombre de logo que l'on veut afficher
-    if (distance > 0.2 && logos.length < 10 + 1) {
-        t++
+    // la distance correspond à la distance entre le pointeur et le logo et le 20 correspond au nombre de logo que l'on veut afficher
+    if (distance > 0.1 && logos.length < 20) {
+        setIndex((prevIndex) => prevIndex + 1);
         return [
             ...logos,
             {
-            // ... mouse,
-            index: t,
+            x,
+            y,
+            index: index,
             }
         ]
     }
-    return logos
+    // on regarde si le nombre de logo est supérieur au nombre de logos définis si oui on fait un splice pour remplacer le dernier
+    // si non, on retourne une copie des logos existants (pour éviter un comportement innnatendu)
+    return logos.length > 19 ? logos.splice(logos.length - 19) : logos.map((plane) => ({ ... plane}))
 }
     const { viewport } = useThree();
 
     useFrame(({ mouse }) => {
         const x = (viewport.width * mouse.x) / 2
         const y = (viewport.height * mouse.y) / 2
-        updateLogos([...logos, x, y])
+        updateLogos(updatePositions({ x, y }));
     })
+
     return (
         <>
-            {logos.map((logo, i) => (
-                <Logo key={`plane${logo.index}`} index={logo.index} x={logo.x} y={logo.y} />
+            {logos.map((logo) => (
+                <Logo key={logo.index} index={logo.index} x={logo.x} y={logo.y} />
             ))}
         </>
     )
