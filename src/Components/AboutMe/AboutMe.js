@@ -1,11 +1,5 @@
 import './AboutMe.scss'
 import Logos from './Logos/Logos'
-// import img1 from '../../img/jsLogo3d.png'
-// import img2 from '../../img/jsLogo3d.png'
-// import img3 from '../../img/jsLogo.png'
-// import img4 from '../../img/jsLogo.png'
-// import img5 from '../../img/jsLogo.png'
-
 import { Canvas } from '@react-three/fiber'
 
 export default function AboutMe({ className }) {
