@@ -14,8 +14,8 @@ export default function AboutMe({ className }) {
       </div>
 
       <Canvas>
-      <ambientLight />
-      <Logos />
+      <ambientLight/>
+      <Logos /> 
       </Canvas>
     </div>
   )

@@ -1,7 +1,7 @@
 import React from 'react';
 import { useTexture } from "@react-three/drei";
 import { useMemo } from "react";
-import logoGrid from '../../../img/jsLogo.png'
+import logoGrid from '../../../img/logosTechnos.png'
 import { RepeatWrapping } from 'three';
 
 export default function Logo({ x, y, offset}) {
@@ -15,9 +15,10 @@ export default function Logo({ x, y, offset}) {
   logoMap.offset.set(offset.x, offset.y)
 
   return (
-    <mesh position={[x, y, 0]}>
+    <mesh position={[x, y, 0]} >
       <planeGeometry args={[.5, .5]} />
-      <meshStandardMaterial map={logoMap} />
+      <meshStandardMaterial map={logoMap} transparent={true} />
+      
     </mesh>
   )
 };
