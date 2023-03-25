@@ -1,32 +1,65 @@
 @use "../../style/vars";
-.AboutMe{
+
+.AboutMe {
     height: 800px;
     background-color: vars.$gray;
-    &-presentation{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+
+    &-presentation {
+        display: inline-block;
         width: 80%;
         margin: auto;
         background-color: vars.$grayish-light;
         padding: 1rem;
         border-radius: 5px;
-        color:vars.$white ;
+        color: vars.$white ;
         line-height: 1.6rem;
         // font-weight: bold;
-        letter-spacing: 1px ;
+        letter-spacing: 1px;
+        position: absolute;
+        z-index: 1;
 
+        &__resume {
+            margin-bottom: 2rem;
+            & span {
+                color: vars.$green ;
+            }
+        }
+
+        &__skills h1 {
+            margin-bottom: 1.5rem;
+
+            & span:hover {
+                text-shadow: 0 0 1px #fff, 0 0 2px #fff, 0 0 4px #fff, 0 0 8px #0ff, 0 0 16px #0ff, 0 0 20px #0ff, 0 0 25px #0ff;
+            }
+            & span:nth-child(3){
+                margin-right: .8rem;
+            }
+        }
     }
-    & span {
-        color:vars.$green ;
+
+    &-canvas {
+        position: relative;
+        z-index: 0;
+        width: 100%;
+        height: 100%;
     }
 }
-.grayish{
+
+.grayish {
     background-color: vars.$grayish;
     // transition: background-color 1s;
 }
-.gray{
+
+.gray {
     background-color: vars.$gray;
     // transition: background-color 1s;
 }
-.greenish{
+
+.greenish {
     background-color: vars.$greenish;
     // transition: background-color 1s;
 }
