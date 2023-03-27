@@ -8,7 +8,7 @@ export default function AboutMe({ className }) {
     <div className={className}>
       <div className="AboutMe-presentation">
         <div className="AboutMe-presentation__resume">
-        Salut, je suis Fabrice Milet, développeur web en <span>reconversion</span>. J'aime apprendre et relever 
+        Salut, je suis Fabrice, développeur web en <span>reconversion</span>. J'aime apprendre et relever 
         de nouveaux défis.
         Avec une rigueur professionnelle acquise lors de mes précédentes expériences professionnelles, notammant comme <span>formateur </span>
         ou <span>chef d'équipe</span> dans la fibre optique, je m'efforce toujours de produire un <span>travail de qualité</span>, 

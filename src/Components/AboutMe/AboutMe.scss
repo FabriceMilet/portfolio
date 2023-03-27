@@ -66,21 +66,22 @@
 
 .grayish {
     background-color: vars.$grayish;
-    // transition: background-color 1s;
 }
 
 .gray {
     background-color: vars.$gray;
-    // transition: background-color 1s;
 }
 
 .greenish {
     background-color: vars.$greenish;
-    // transition: background-color 1s;
 }
 
 @media (max-width: 1024px) {
-    h1 {
-        font-size: 1.5rem;
+    .AboutMe{
+        font-size: 0.9rem;
+        h1 {
+            font-size: 1.5rem;
+        }
     }
+   
  }
