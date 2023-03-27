@@ -1,68 +1,94 @@
 @use "../../style/vars";
-.Home{
-    font-size: 2rem;
-    color: vars.$white;
-    height: 800px;
-    text-transform: uppercase;
-    background-color: vars.$gray;
-    // transition: background-color 1s;
-    
-    &-container{
-      padding-top: 9rem;
-        width: 80vw;
-        height: 110vh;
-        // margin: 8% auto 0;
-        margin: auto;
-        display: flex;
-        flex-direction: column;
-        gap: 10%;
-        & span {
-          position: relative;
-          opacity: 0;
-          animation: cascade 1s ease-in-out forwards;
-      }
-      & span:nth-child(2) {
-          animation-delay: 0.3s;
-        }
-      & span:nth-child(3) {
-          animation-delay: 0.6s;
-          color: rgba(239, 236, 236, 0.7);
-        }
-        & span:nth-child(4) {
-          animation-delay: 0.9s;
-        }
-    }
-    &-button {
-      background-color: transparent;
-      border-color: vars.$green;
-      color:vars.$green;
-  
-      &:hover{
-        cursor: pointer;
-        background-color: vars.$green; 
-        color: vars.$white; 
-        border-color: vars.$white;
-        transition-duration: 0.4s; 
-        box-shadow: 0px 4px 12px 0px rgba(239,236,236,0.15); 
-        transform: translateY(-2px);
-      }
-    }
-}
-.gray{
+
+.Home {
+  font-size: 2rem;
+  color: vars.$white;
+  height: 800px;
+  text-transform: uppercase;
   background-color: vars.$gray;
-}
-.greenish{
-  background-color: vars.$greenish !important;
-  // transition: background-color 1s;
-}
-@keyframes cascade {
-    from {
-      top: -50px;
+
+  &-container {
+    padding-top: 9rem;
+    width: 80vw;
+    height: 110vh;
+    margin: auto;
+    display: flex;
+    flex-direction: column;
+    gap: 10%;
+
+    & span {
+      position: relative;
       opacity: 0;
+      animation: cascade 1s ease-in-out forwards;
     }
-    to {
-      top: 0;
-      opacity: 1;
+
+    & span:nth-child(2) {
+      animation-delay: 0.3s;
+    }
+
+    & span:nth-child(3) {
+      animation-delay: 0.6s;
+      color: rgba(239, 236, 236, 0.7);
+    }
+
+    & span:nth-child(4) {
+      animation-delay: 0.9s;
     }
   }
- 
+
+  &-button {
+    padding: 0.6rem 1.6rem;
+    border: 2px solid vars.$green;
+    position: relative;
+    overflow: hidden;
+    background-color: transparent;
+    transition: .3s;
+    z-index: 1;
+    font-family: inherit;
+    color: vars.$green;
+    box-shadow: 0 5px 20px rgba(0, 0, 0, 0.2);
+
+    &::before {
+      content: '';
+      width: 0;
+      height: 360%;
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%) rotate(45deg);
+      background: vars.$green;
+      transition: .5s ease;
+      display: block;
+      z-index: -1;
+    }
+
+    &:hover {
+      cursor: pointer;
+      color: vars.$gray;
+  
+      &::before {
+        width: 105%;
+      }
+    }
+  }
+
+  .gray {
+    background-color: vars.$gray;
+  }
+
+  .greenish {
+    background-color: vars.$greenish !important;
+  }
+}
+
+@keyframes cascade {
+  from {
+    top: -50px;
+    opacity: 0;
+  }
+
+  to {
+    top: 0;
+    opacity: 1;
+  }
+}

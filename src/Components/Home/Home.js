@@ -5,7 +5,7 @@ export default function Home({className}) {
     <div className={className}>
       <div className="Home-container">
             <span>Fabrice Milet</span> 
-            <span>développeur web</span>
+            <span>développeur Web & Mobile</span>
             <span>Bienvenue sur mon portfolio</span>
             <span>
             <button className="Home-button">Contactez moi</button>
