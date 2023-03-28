@@ -1,19 +1,147 @@
 @use "../../style/vars";
-.Contact{
-    // background-color: blue;
+
+.Contact {
     height: 800px;
     background-color: vars.$greenish;
-    // transition: background-color 1s;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    position: relative;
+
+    &-title__filled {
+        color: vars.$white;
+        font-size: 2.5rem;
+        text-transform: uppercase;
+        text-align: center;
+        margin-bottom: 2rem;
+        transform: translate(-50%, -50%);
+        z-index: 0;
+        position: absolute;
+        top: -5%;
+        left:  50%;
+    }
+    &-title__empty {
+        color: transparent;
+        -webkit-text-stroke: 0.5px vars.$white;
+        font-size: 2.5rem;
+        text-transform: uppercase;
+        text-align: center;
+        margin-bottom: 2rem;
+        transform: translate(-50%, -50%);
+        z-index: 2;
+        position: absolute;
+        top: -5%;
+        left:  50%;
+    }
+
+    &-form {
+        background-color: vars.$grayish;
+        color: vars.$white;
+        text-shadow:
+            -1px -1px 0 #000,
+            1px -1px 0 #000,
+            -1px 1px 0 #000,
+            1px 1px 0 #000;
+        box-shadow: 0 5px 20px rgba(0, 0, 0, 0.2);
+        height: 500px;
+        width: 60%;
+        border-radius: 10px;
+        margin: 0 auto 2rem;
+        display: flex;
+        flex-direction: column;
+        justify-content: space-around;
+        align-items: center;
+        padding: 2rem;
+
+        &__infos {
+            display: flex;
+            flex-direction: column;
+            gap: 0.7rem;
+            flex-grow: 1;
+            width: 80%;
+        }
+
+        &__message {
+            display: flex;
+            flex-direction: column;
+            gap: 0.7rem;
+            flex-grow: 4;
+            width: 80%;
+
+            & textarea {
+                height: 90%;
+                margin-bottom: 1rem;
+            }
+        }
+
+        &__button {
+            padding: .1rem .5rem;
+            border: 2px solid vars.$green;
+            position: relative;
+            overflow: hidden;
+            background-color: transparent;
+            transition: .3s;
+            z-index: 1;
+            font-family: inherit;
+            color: vars.$green;
+            box-shadow: 0 5px 20px rgba(0, 0, 0, 0.2);
+
+            &::before {
+                content: '';
+                width: 0;
+                height: 360%;
+                position: absolute;
+                top: 50%;
+                left: 50%;
+                transform: translate(-50%, -50%) rotate(45deg);
+                background: vars.$green;
+                transition: .5s ease;
+                display: block;
+                z-index: -1;
+            }
+
+            &:hover {
+                cursor: pointer;
+                color: vars.$gray;
+
+                &::before {
+                    width: 105%;
+                }
+
+            }
+        }
+    }
+
+    &-phone {
+        font-size: 2rem;
+        color: vars.$white;
+
+        &__number span {
+            color: vars.$green;
+        }
+    }
 }
-.grayish{
+
+.grayish {
     background-color: vars.$grayish;
-    // transition: background-color 1s;
 }
-.gray{
+
+.gray {
     background-color: vars.$gray;
-    // transition: background-color 1s;
 }
-.greenish{
+
+.greenish {
     background-color: vars.$greenish;
-    // transition: background-color 1s;
 }
+#circle {
+    height: 3rem;
+    width: 3rem;
+    border-radius: 50%;
+    background-color: vars.$gray;
+    border: 7px solid vars.$white;
+    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.2);
+    top: 0;
+    left: 0;
+    position: absolute;
+    z-index: 1;
+  }
