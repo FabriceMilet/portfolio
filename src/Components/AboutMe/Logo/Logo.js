@@ -18,7 +18,6 @@ export default function Logo({ x, y, offset}) {
     <mesh position={[x, y, 0]} >
       <planeGeometry args={[.5, .5]} />
       <meshStandardMaterial map={logoMap} transparent={true} />
-      
     </mesh>
   )
 };

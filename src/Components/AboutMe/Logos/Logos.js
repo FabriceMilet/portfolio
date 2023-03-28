@@ -65,7 +65,7 @@ export default function Logos() {
                 <Logo key={logo.index} index={logo.index} x={logo.x} y={logo.y}
                     offset={logo.offset}
                 />
-            )) : 0}
+            )) : null}
         </>
     )
 };

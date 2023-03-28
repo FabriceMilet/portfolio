@@ -15,6 +15,7 @@ export default function App() {
   const [projectsColor, setProjectsColor] = useState('')
   const [contactColor, setContactColor] = useState('')
   const [headerScrolled, setheaderScrolled] = useState(false)
+  const [projectsHover, setProjectsHover] = useState(false) 
 
   const handleScroll = () => {
     if (window.scrollY < 100) {
@@ -30,7 +31,11 @@ export default function App() {
       setHome('grayish');
       setAboutMeColor('grayish')
       setProjectsColor('grayish')
-    }else if (window.scrollY > 800 && window.scrollY < 1600){
+      
+    }else if (window.scrollY > 1100 && window.scrollY < 1600){
+      setProjectsHover(true) 
+    }
+    else if (window.scrollY > 800 && window.scrollY < 1600){
       setAboutMeColor('greenish')
       setProjectsColor('greenish')
     }else if (window.scrollY > 1600 && window.scrollY < 2000){
@@ -41,6 +46,7 @@ export default function App() {
       setProjectsColor('gray')
       setContactColor('gray')
     };}
+
   window.addEventListener('scroll', handleScroll);
 
   return (
@@ -50,7 +56,8 @@ export default function App() {
 
 <Home className={`Home ${homeColor}`} />
 <AboutMe className={`AboutMe ${aboutMeColor}`} />
-<Projects className={`Projects ${projectsColor}`} />
+<Projects className={`Projects ${projectsColor}`}
+ projectsHover={projectsHover} />
 <Contact className={`Contact ${contactColor}`} />
    
 </div>
