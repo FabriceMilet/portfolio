@@ -1,11 +1,12 @@
 import './AboutMe.scss'
 import Logos from './Logos/Logos'
 import { Canvas } from '@react-three/fiber'
+import { forwardRef } from 'react';
 
-export default function AboutMe({ className }) {
+const AboutMe = forwardRef(({ className}, targetAboutMe ) => {
 
   return (
-    <div className={className}>
+    <div className={className} ref={targetAboutMe}>
       <div className="AboutMe-presentation">
         <div className="AboutMe-presentation__resume">
         Salut, je suis Fabrice, développeur web en <span>reconversion</span>. J'aime apprendre et relever 
@@ -34,4 +35,5 @@ export default function AboutMe({ className }) {
     </div>
     </div>
   )
-};
+  });
+export default AboutMe;

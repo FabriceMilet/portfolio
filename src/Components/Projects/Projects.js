@@ -1,10 +1,11 @@
 import './Projects.scss'
 import getBalanced from '../../img/getBalanced.png'
+import { forwardRef } from 'react';
 
-export default function Projects({className, projectsHover}) {
+const Projects = forwardRef(({ className, projectsHover}, targetProjects ) => {
 
   return (
-    <div className={className}>
+    <div className={className} ref={targetProjects}>
       {projectsHover && <h1 className="Projects-title">
         <span>M</span>
         <span>e</span>
@@ -56,4 +57,5 @@ export default function Projects({className, projectsHover}) {
     </div>
   </div>
   )
-};
+});
+export default Projects;

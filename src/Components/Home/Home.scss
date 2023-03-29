@@ -16,6 +16,12 @@
     justify-content: center;
     gap: 10%;
 
+    &__bottom {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+
     & span {
       position: relative;
       opacity: 0;
