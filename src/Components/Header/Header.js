@@ -18,13 +18,19 @@ export default function Header({className, targetAboutMe, targetProjects, target
     setheaderScrolled(true)
     setContactHover(true)
   };
+  const handleClickCV = (event) => {
+    event.preventDefault();
+    window.scroll(0, 6000);
+    setheaderScrolled(true)
+    setContactHover(true)
+  };
 
   return (
     <div className={className}>
       <button className="Header-button" onClick={handleClickAboutMe}>à propos</button>
       <button className="Header-button" onClick={handleClickProjects}>mes projets</button>
       <button className="Header-button" onClick={handleClickContact}>contact</button>
-      <button className="Header-button">CV</button>
+      <button className="Header-button" onClick={handleClickCV}>CV</button>
     </div>
   )
 };

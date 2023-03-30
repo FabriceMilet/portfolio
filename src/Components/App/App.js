@@ -58,9 +58,10 @@ export default function App() {
   const targetProjects = useRef(null);
   const targetContact = useRef(null);
 
+ 
   return (
     <div className='App'>
-
+    
       <Header className={!headerScrolled ? 'Header' : 'scrolled'} 
       targetAboutMe={targetAboutMe}
       targetProjects={targetProjects}
@@ -70,7 +71,11 @@ export default function App() {
       setContactHover={setContactHover}
       />
 
-      <Home className={`Home ${homeColor}`} />
+      <Home className={`Home ${homeColor}`} 
+      targetContact={targetContact}
+      setContactHover={setContactHover}
+      setheaderScrolled={setheaderScrolled}
+       />
       <AboutMe className={`AboutMe ${aboutMeColor}`} ref={targetAboutMe} />
       <Projects className={`Projects ${projectsColor}`}
         projectsHover={projectsHover} ref={targetProjects} />

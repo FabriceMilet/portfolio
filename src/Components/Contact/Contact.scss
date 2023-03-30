@@ -156,6 +156,12 @@
         width: 60%;
         justify-content: space-between;
         align-items: center;
+        &__number a{
+            color: vars.$green; 
+        }
+        &__cv{
+            cursor: pointer;
+        }
 
         & span {
             color: vars.$green;

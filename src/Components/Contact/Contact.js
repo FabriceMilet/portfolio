@@ -1,18 +1,8 @@
 import './Contact.scss'
 import { forwardRef } from 'react';
+import cvPdf from "../../pdf/CV_F_Milet.pdf"
 
 const Contact = forwardRef(({ className, contactHover}, targetContact ) => {
-
-  const handleDownload = () => {
-    const pdfUrl = "../pdf/CV_F_Milet.pdf";
-    const link = document.createElement("a");
-    link.href = pdfUrl;
-    link.download = "file.pdf";
-    document.body.appendChild(link);
-    link.click();
-    document.body.removeChild(link);
-  }
-
   return (
     <div className={className} ref={targetContact}>
       {contactHover && <h1 className="Contact-title">
@@ -48,9 +38,9 @@ const Contact = forwardRef(({ className, contactHover}, targetContact ) => {
       <div className="Contact-phone">
         <div>
          <div className="Contact-phone__text">Par téléphone,</div>
-          <div className="Contact-phone__number">au <span>07 81 69 49 28</span></div>
+          <div className="Contact-phone__number">au <a href="tel:0781694928">07 81 69 49 28</a></div>
           </div>
-          <div className="Contact-phone__cv">Télécharger mon <span onClick={handleDownload}>CV</span></div>
+          <a className="Contact-phone__cv" href={cvPdf} target="_blank" rel="noreferrer">Télécharger mon <span>CV</span></a>
           </div>
     </div>
   )
