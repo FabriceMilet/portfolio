@@ -17,3 +17,4 @@ $white:#EFECEC;
 $gray-light: color.scale($gray, $lightness: 5%);
 $gray-lightness: color.scale($gray, $lightness: 10%);
 $grayish-light: color.scale($grayish, $lightness: 5%);
+$green-darker: color.scale($green, $lightness: -30%);

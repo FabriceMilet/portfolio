@@ -3,9 +3,7 @@ import Home from '../Home/Home';
 import AboutMe from '../AboutMe/AboutMe';
 import Projects from '../Projects/Projects';
 import Contact from '../Contact/Contact';
-// import { Waypoint } from 'react-waypoint';
-// import { useSpring, animated } from 'react-spring';
-import { useState } from 'react';
+import { useState, useRef } from 'react';
 import Header from '../Header/Header';
 
 export default function App() {
@@ -15,7 +13,9 @@ export default function App() {
   const [projectsColor, setProjectsColor] = useState('')
   const [contactColor, setContactColor] = useState('')
   const [headerScrolled, setheaderScrolled] = useState(false)
-  const [projectsHover, setProjectsHover] = useState(false) 
+  // State qui va gérer l'apparition des titres
+  const [projectsHover, setProjectsHover] = useState(false)
+  const [contactHover, setContactHover] = useState(false)
 
   const handleScroll = () => {
     if (window.scrollY < 100) {
@@ -27,39 +27,61 @@ export default function App() {
       setHome('gray');
       setAboutMeColor('gray')
       setheaderScrolled(true)
-    } else if (window.scrollY > 400 && window.scrollY < 800){
+    } else if (window.scrollY > 400 && window.scrollY < 800) {
       setHome('grayish');
       setAboutMeColor('grayish')
       setProjectsColor('grayish')
-      
-    }else if (window.scrollY > 1100 && window.scrollY < 1600){
-      setProjectsHover(true) 
+
+    } else if (window.scrollY > 1100 && window.scrollY < 1600) {
+      setProjectsHover(true)
     }
-    else if (window.scrollY > 800 && window.scrollY < 1600){
+    else if (window.scrollY > 800 && window.scrollY < 1600) {
       setAboutMeColor('greenish')
       setProjectsColor('greenish')
-    }else if (window.scrollY > 1600 && window.scrollY < 2000){
+    }
+    else if (window.scrollY > 1800 && window.scrollY < 2000) {
+      setContactHover(true)
+    } else if (window.scrollY > 1600 && window.scrollY < 2000) {
       setAboutMeColor('grayish')
       setProjectsColor('grayish')
       setContactColor('grayish')
-    }else if (window.scrollY > 2000){
+    }
+    else if (window.scrollY > 2000) {
       setProjectsColor('gray')
       setContactColor('gray')
-    };}
+    };
+  }
 
   window.addEventListener('scroll', handleScroll);
 
-  return (
-<div className='App'>
- 
-<Header className={!headerScrolled ? 'Header' : 'scrolled'} />
+  const targetAboutMe = useRef(null);
+  const targetProjects = useRef(null);
+  const targetContact = useRef(null);
 
-<Home className={`Home ${homeColor}`} />
-<AboutMe className={`AboutMe ${aboutMeColor}`} />
-<Projects className={`Projects ${projectsColor}`}
- projectsHover={projectsHover} />
-<Contact className={`Contact ${contactColor}`} />
-   
-</div>
+ 
+  return (
+    <div className='App'>
+    
+      <Header className={!headerScrolled ? 'Header' : 'scrolled'} 
+      targetAboutMe={targetAboutMe}
+      targetProjects={targetProjects}
+      targetContact={targetContact}
+      setheaderScrolled={setheaderScrolled}
+      setProjectsHover={setProjectsHover}
+      setContactHover={setContactHover}
+      />
+
+      <Home className={`Home ${homeColor}`} 
+      targetContact={targetContact}
+      setContactHover={setContactHover}
+      setheaderScrolled={setheaderScrolled}
+       />
+      <AboutMe className={`AboutMe ${aboutMeColor}`} ref={targetAboutMe} />
+      <Projects className={`Projects ${projectsColor}`}
+        projectsHover={projectsHover} ref={targetProjects} />
+      <Contact className={`Contact ${contactColor}`}
+        contactHover={contactHover} ref={targetContact} />
+
+    </div>
   )
 };

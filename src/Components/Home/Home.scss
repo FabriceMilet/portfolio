@@ -8,13 +8,19 @@
   background-color: vars.$gray;
 
   &-container {
-    padding-top: 9rem;
     width: 80vw;
     height: 110vh;
     margin: auto;
     display: flex;
     flex-direction: column;
+    justify-content: center;
     gap: 10%;
+
+    &__bottom {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
 
     & span {
       position: relative;
