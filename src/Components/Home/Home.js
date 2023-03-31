@@ -21,20 +21,20 @@ export default function Home({ className, targetContact, setContactHover, sethea
       <div className="Home-container">
         <Canvas shadows camera={{ position: [-5, 2, 10], fov: 60 }}>
             <ambientLight intensity={0.15}  />
-            <spotLight position={[4, 4, 4]} angle={0.1} penumbra={1}  intensity={1.5} shadow-mapSize={512} />
-            <Plane
+            <spotLight position={[4, 4, 4]} angle={0.2} penumbra={1.4}  intensity={1.1} shadow-mapSize={512} />
+            {/* <Plane
           position={[0, -1, 0]}
           receiveShadow
         >
           <shadowMaterial transparent opacity={0.4} />
-        </Plane>
-            <Shadow
+        </Plane> */}
+            {/* <Shadow
             width={1024}
             height={1024}
             position={[-5, -4, -4]}
           opacity={1} scale={8} blur={5} far={2}
-          />
-           <directionalLight castShadow position={[10, 10, 0]} intensity={.3} shadow-mapSize={512}/>
+          /> */}
+           <directionalLight castShadow position={[10, 10, 0]} intensity={.1} shadow-mapSize={512} />
             <Cube position={[0, 1.5, 0]} castShadow receiveShadow  />
             <OrbitControls />      
         </Canvas>
