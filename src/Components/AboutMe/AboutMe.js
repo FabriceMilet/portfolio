@@ -13,7 +13,7 @@ const AboutMe = forwardRef(({ className}, targetAboutMe ) => {
         de nouveaux défis.
         Avec une rigueur professionnelle acquise lors de mes précédentes expériences professionnelles, notammant comme <span>formateur </span>
         ou <span>chef d'équipe</span> dans la fibre optique, je m'efforce toujours de produire un <span>travail de qualité</span>, 
-        en gardant à l'esprit l'importance de la <span>satisfaction du client</span>. Je suis quelqu'un d'<span>autonome et efficace</span> dans mon travail.
+        en gardant à l'esprit l'importance de la <span>satisfaction du client</span>. Je suis quelqu'un d'<span>autonome, patient et efficace</span> dans mon travail.
         <span className="AboutMe-presentation__link"> Contactez moi</span>, je vous répondrai très rapidement !
         </div>
         <div className="AboutMe-presentation__skills">
@@ -21,8 +21,8 @@ const AboutMe = forwardRef(({ className}, targetAboutMe ) => {
            <span>c</span><span>o</span><span>m</span><span>p</span><span>é</span><span>t</span><span>e</span><span>n</span><span>c</span><span>e</span><span>s</span>
            </h1>
            <ul>
-          <li>HTML, CSS, SASS, JavaScript, REACT, Node.JS, Express, SQL, PostgreSQL</li>
-          <li>GIT / GitHub</li>
+          <li>HTML, CSS, SASS, JavaScript, REACT, Redux, Node.JS, Express, API REST, SQL, PostgreSQL</li>
+          <li>Git / GitHub</li>
           <li>Méthodes agiles, SCRUM</li>
           </ul>
         </div>

@@ -21,7 +21,8 @@ const Contact = forwardRef(({ className, contactHover}, targetContact ) => {
         <span>i</span>
         </h1>}
       
-      <form name="contact" method='post' className="Contact-form">
+      <form name="contact" method='post' className="Contact-form" data-netlify="true" onSubmit='submit'>
+        <input type="hidden" name='form-name' value='contact' />
         <div className="Contact-form__infos" >
           <label className="Contact-form__label" htmlFor="name"> Nom  </label>
           <input className="Contact-form__input" type="text" name="name" />
