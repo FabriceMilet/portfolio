@@ -39,7 +39,7 @@ const Projects = forwardRef(({ className, projectsHover}, targetProjects ) => {
         <section className="Projects-card__info">
           <h3>Get Balanced</h3>
           <p>Application qui aide au partage des tâches ménagères dans un foyer </p>
-          <a>Cliquez ici pour en savoir plus</a>
+          <a href='#'>Cliquez ici pour en savoir plus</a>
         </section>
       </div>
      
@@ -50,7 +50,7 @@ const Projects = forwardRef(({ className, projectsHover}, targetProjects ) => {
         <section className="Projects-card__info">
           <h3>Get Balanced</h3>
           <p>Application qui aide au partage des tâches ménagères dans un foyer </p>
-          <a>Cliquez ici pour en savoir plus</a>
+          <a href='#'>Cliquez ici pour en savoir plus</a>
         </section>
       </div>
       
