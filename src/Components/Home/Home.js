@@ -4,11 +4,9 @@ import { useRef } from 'react';
 import { forwardRef } from 'react';
 import { Canvas } from '@react-three/fiber'
 import Cube from './Cube/Cube';
-import { OrbitControls, Shadow, Plane } from '@react-three/drei'
+import { OrbitControls } from '@react-three/drei'
 
 const Home = forwardRef(({ className, targetContact, setContactHover, setheaderScrolled}, targetHome ) => {
-
-  const cameraRef = useRef()
 
   const handleClickContact = (event) => {
     event.preventDefault();
@@ -46,17 +44,4 @@ const Home = forwardRef(({ className, targetContact, setContactHover, setheaderS
   )
 });
 
-export default Home
-
-           {/* <Plane
-position={[0, -1, 0]}
-receiveShadow
->
-<shadowMaterial transparent opacity={0.4} />
-</Plane> */}
-            {/* <Shadow
-  width={1024}
-  height={1024}
-  position={[-5, -4, -4]}
-opacity={1} scale={8} blur={5} far={2}
-/> */}
+export default Home;

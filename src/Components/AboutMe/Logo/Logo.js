@@ -6,7 +6,7 @@ import { RepeatWrapping } from 'three';
 
 export default function Logo({ x, y, offset}) {
   const logos = useTexture(logoGrid)
-  const logoMap = useMemo(() => logos.clone (), [])
+  const logoMap = useMemo(() => logos.clone (), [logos])
  // ici on va faire en sorte de montrer qu'une partie de la grille pour ne générer qu'une seule image
  // à la place de neuf
   logoMap.wrapS = RepeatWrapping;
