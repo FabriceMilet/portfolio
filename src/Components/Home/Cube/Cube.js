@@ -10,7 +10,7 @@ export default function Cube({ castShadow, receiveShadow }) {
   useFrame((state, delta) => (ref.current.rotation.x += 0.1 * delta))
 
   // Créer un tableau de textes pour chaque face du cube
-  const texts = ['Fabrice Milet', 'Développeur Web & Mobile', 'Bienvenue sur mon portfolio', 'Contactez moi et discutons', 'Descendez plus bas pour voir mes projets', 'Je me présente ci-desous'];
+  const texts = ['Fabrice Milet', 'Développeur Web & Mobile', 'Bienvenue sur mon portfolio', 'Contactez moi et discutons', 'Rendez-vous plus bas pour voir mes projets', 'Descendez pour voir ma présentation'];
 
   // Créer un canvas pour chaque face du cube avec le texte et la couleur correspondants
   const canvases = texts.map((text) => {
@@ -45,10 +45,10 @@ export default function Cube({ castShadow, receiveShadow }) {
   const materials = textures.map(texture => new THREE.MeshStandardMaterial({ map: texture }));
 
   // Créer la géométrie du cube
-  const geometry = new THREE.BoxGeometry(3, 3, 3);
+  const geometry = new THREE.BoxGeometry(4.5, 4.5, 4.5);
 
   return (
-    <mesh ref={ref} material={materials} geometry={geometry} castShadow={castShadow} receiveShadow={true}
+    <mesh ref={ref} material={materials} geometry={geometry}
    />
   )
 }

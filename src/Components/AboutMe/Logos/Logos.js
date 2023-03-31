@@ -1,12 +1,12 @@
 import { useFrame, useThree } from "@react-three/fiber";
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import { Vector2 } from "three";
 import Logo from "../Logo/Logo";
 
 
 export default function Logos() {
-     // on recupère viewport qui nous permet de savoir où on se trouve sur l'écran
-     const { viewport } = useThree();
+    // on recupère viewport qui nous permet de savoir où on se trouve sur l'écran
+    const { viewport } = useThree();
     // on initialise un tableau vide de logos et sa fonction updateLogos
     let [logos, updateLogos] = useState([])
     // on initialise un index qu'on utilisera dans la key du map plus tard
@@ -23,7 +23,8 @@ export default function Logos() {
                     offset: {
                         x: Math.floor(Math.random() * 3) / 3,
                         y: Math.floor(Math.random() * 3) / 3
-                    }
+                    },
+                    displayTime: 3000
                 }
             ]
         }
@@ -49,9 +50,10 @@ export default function Logos() {
                 }
             ]
         }
-        // on regarde si le nombre de logo est supérieur au nombre de logos définis si oui on fait un splice pour remplacer le dernier
+        // on regarde si le nombre de logo est supérieur au nombre de logos définis si oui on fait un slice pour remplacer le dernier
         // si non, on retourne une copie des logos existants (pour éviter un comportement innnatendu)
-        return logos.length > 19 ? logos.splice(logos.length - 19) : logos.map((logo) => ({ ...logo }))
+        
+        return logos.length > 19 ? [...logos.slice(1)] : logos.map((logo) => ({ ...logo }))
     }
     useFrame(({ mouse }) => {
         const x = (viewport.width * mouse.x) / 2
