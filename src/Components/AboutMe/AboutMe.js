@@ -29,7 +29,7 @@ const AboutMe = forwardRef(({ className}, targetAboutMe ) => {
       </div>
       <div className="AboutMe-canvas">
       <Canvas>
-      <ambientLight/>
+      <ambientLight />
       <Logos /> 
       </Canvas>
     </div>
