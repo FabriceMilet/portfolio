@@ -1,6 +1,5 @@
 import './Home.scss'
 import { FaArrowAltCircleDown } from "react-icons/fa";
-import { useRef } from 'react';
 import { forwardRef } from 'react';
 import { Canvas } from '@react-three/fiber'
 import Cube from './Cube/Cube';

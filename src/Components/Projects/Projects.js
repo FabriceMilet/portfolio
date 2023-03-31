@@ -26,8 +26,8 @@ const Projects = forwardRef(({ className, projectsHover}, targetProjects ) => {
         </div>
         <section className="Projects-card__info">
           <h3>Get Balanced</h3>
-          <p>Application qui aide au partage des tâches ménagères dans un foyer </p>
-          <a href='#'>Cliquez ici pour en savoir plus</a>
+          <p className="Projects-card__text">Application qui aide au partage des tâches ménagères dans un foyer </p>
+          <p className="Projects-card__link">Cliquez ici pour en savoir plus</p>
         </section>
       </div>
       
@@ -38,8 +38,8 @@ const Projects = forwardRef(({ className, projectsHover}, targetProjects ) => {
         </div>
         <section className="Projects-card__info">
           <h3>Get Balanced</h3>
-          <p>Application qui aide au partage des tâches ménagères dans un foyer </p>
-          <a href='#'>Cliquez ici pour en savoir plus</a>
+          <p className="Projects-card__text">Application qui aide au partage des tâches ménagères dans un foyer </p>
+          <p className="Projects-card__link">Cliquez ici pour en savoir plus</p>
         </section>
       </div>
      
@@ -49,8 +49,8 @@ const Projects = forwardRef(({ className, projectsHover}, targetProjects ) => {
         </div>
         <section className="Projects-card__info">
           <h3>Get Balanced</h3>
-          <p>Application qui aide au partage des tâches ménagères dans un foyer </p>
-          <a href='#'>Cliquez ici pour en savoir plus</a>
+          <p className="Projects-card__text">Application qui aide au partage des tâches ménagères dans un foyer </p>
+          <p className="Projects-card__link">Cliquez ici pour en savoir plus</p>
         </section>
       </div>
       

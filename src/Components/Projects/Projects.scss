@@ -106,13 +106,13 @@
             transition: opacity .3s ease-out;
         }
 
-        &__info p {
+        &__text {
             inset: auto auto 120px 30px;
             max-width: 90%;
             font-size: .8rem;
         }
 
-        &__info a {
+        &__link {
             inset: auto auto 20px 30px;
             font-size: .8rem;
             color: vars.$white;
@@ -128,8 +128,10 @@
             transition: inset .3s ease-out;
         }
 
-        &:hover p,
-        &:hover a {
+        &:hover p
+        
+        // ,&:hover a
+         {
             opacity: 1;
             transition: opacity .5s .1s ease-in;
         }
