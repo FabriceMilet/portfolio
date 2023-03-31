@@ -1,5 +1,13 @@
 @use "./vars";
-// mettre ici la police du site
+@font-face {
+    font-family: 'Hariettext';
+    src: url('../../public/fonts/harriet/HARRIETTEXTBOLD.woff2'),
+     url('../../public/fonts/harriet/HARRIETTEXTBOLDITALIC.woff2'),
+     url('../../public/fonts/harriet/HARRIETTEXTITALIC.woff2'),
+     url('../../public/fonts/harriet/HARRIETTEXTLIGHT.woff2'),
+     url('../../public/fonts/harriet/HARRIETTEXTMEDIUM.woff2'),
+     url('../../public/fonts/harriet/HARRIETTEXTREGULAR.woff2');
+}
 body{
-    background-color: vars.$blue;
+    font-family: 'Hariettext';
 }

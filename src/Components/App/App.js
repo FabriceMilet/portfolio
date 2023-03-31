@@ -3,76 +3,97 @@ import Home from '../Home/Home';
 import AboutMe from '../AboutMe/AboutMe';
 import Projects from '../Projects/Projects';
 import Contact from '../Contact/Contact';
-import { Waypoint } from 'react-waypoint';
-import { useSpring, animated } from 'react-spring';
-import { useState } from 'react';
+import { useState, useRef, useEffect } from 'react';
+import Header from '../Header/Header';
 
 export default function App() {
-  // State qui permet l'affichage du composant s'il est true
-  const [toggleElem2, setToggleElem2] = useState(false)
-  const [toggleElem3, setToggleElem3] = useState(false)
-  const [toggleElem4, setToggleElem4] = useState(false)
+  const targetAboutMe = useRef(null);
+  const targetProjects = useRef(null);
+  const targetContact = useRef(null);
+  const targetHome = useRef(null);
 
-  // Les animations qui sont déclenchées lors du passage du state de false a true. 
-  const animation = useSpring({
-    opacity: toggleElem2 ? 1 : 0,
-    //transform: toggleElem2 ? "translateX(0)" : "translateX(-80%)"
-  })
-  const animation2 = useSpring({
-    opacity: toggleElem3 ? 1 : 0,
-    //transform: toggleElem3 ? "translateX(0)" : "translateX(80%)"
-  })
-  const animation3 = useSpring({
-    opacity: toggleElem4 ? 1 : 0,
-    //transform: toggleElem4 ? "translateX(0)" : "translateX(80%)"
-  })
+  // State qui va gérer le bgc des composants suivant le scroll
+  const [homeColor, setHome] = useState('')
+  const [aboutMeColor, setAboutMeColor] = useState('')
+  const [projectsColor, setProjectsColor] = useState('')
+  const [contactColor, setContactColor] = useState('')
+  const [headerScrolled, setheaderScrolled] = useState(false)
+  // State qui va gérer l'apparition des titres
+  const [projectsHover, setProjectsHover] = useState(false)
+  const [contactHover, setContactHover] = useState(false)
+
+  useEffect(() => {
+    targetHome.current.scrollIntoView({ behavior: "smooth" });
+  }, []);
+
+  const handleScroll = () => {
+    if (window.scrollY < 100) {
+      setHome('gray');
+      setAboutMeColor('gray')
+      setheaderScrolled(false)
+    }
+    else if (window.scrollY > 100 && window.scrollY < 400) {
+      setHome('gray');
+      setAboutMeColor('gray')
+      setheaderScrolled(true)
+    } else if (window.scrollY > 400 && window.scrollY < 800) {
+      setHome('grayish');
+      setAboutMeColor('grayish')
+      setProjectsColor('grayish')
+      console.log('ok1');
+
+    } else if (window.scrollY > 1100 && window.scrollY < 1500) {
+      setProjectsHover(true)
+    }
+    else if (window.scrollY > 800 && window.scrollY < 1500) {
+      setAboutMeColor('greenish')
+      setProjectsColor('greenish')
+      console.log('ok2');
+    }
+    else if (window.scrollY > 1800 && window.scrollY < 2000) {
+      setContactHover(true)
+    }
+     else if (window.scrollY > 1500 && window.scrollY < 2000) {
+      setAboutMeColor('grayish')
+      setProjectsColor('grayish')
+      setContactColor('grayish')
+      console.log('ok3');
+    }
+    else if (window.scrollY > 2000) {
+      setProjectsColor('gray')
+      setContactColor('gray')
+    };
+  }
+
+  window.addEventListener('scroll', handleScroll);
 
   return (
     <div className='App'>
-      <Home />
-      {/* Waypoint déclanche un évènement lors du scroll. 
-          si le state est sur false il le passe a true */}
-      <Waypoint bottomOffset="30%"
-        onEnter={() => {
-          if (!toggleElem2) {
-            setToggleElem2(true)
-          }
-        }
-        }>
-        <animated.div style={animation}>
-          <AboutMe />
-        </animated.div>
-      </Waypoint>
+    
+      <Header className={!headerScrolled ? 'Header' : 'scrolled'} 
+      targetAboutMe={targetAboutMe}
+      targetProjects={targetProjects}
+      targetContact={targetContact}
+      setheaderScrolled={setheaderScrolled}
+      setProjectsHover={setProjectsHover}
+      setContactHover={setContactHover}
+      setContactColor={setContactColor}
+      setAboutMeColor={setAboutMeColor}
+      projectsColor={projectsColor}
+      />
 
-      <Waypoint bottomOffset="30%"
-        onEnter={() => {
-          if (!toggleElem3) {
-            setToggleElem3(true)
-          }
-        }
-        }>
-        <animated.div style={animation2}>
-          <Projects />
-        </animated.div>
-      </Waypoint>
-      <Waypoint bottomOffset="30%"
-        onEnter={() => {
-          if (!toggleElem4) {
-            setToggleElem4(true)
-          }
-        }
-        }>
-        <animated.div style={animation3}>
-          <Contact />
-        </animated.div>
+      <Home className={`Home ${homeColor}`} 
+      targetContact={targetContact}
+      setContactHover={setContactHover}
+      setheaderScrolled={setheaderScrolled}
+      ref={targetHome}
+       />
+      <AboutMe className={`AboutMe ${aboutMeColor}`} ref={targetAboutMe} />
+      <Projects className={`Projects ${projectsColor}`}
+        projectsHover={projectsHover} ref={targetProjects} />
+      <Contact className={`Contact ${contactColor}`}
+        contactHover={contactHover} ref={targetContact} />
 
-      </Waypoint>
     </div>
-  );
+  )
 };
-
-
-
-
-
-

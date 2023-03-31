@@ -1,0 +1,49 @@
+@use "../../style/vars";
+.Header{
+    z-index: 10;
+    background-color: vars.$gray-lightness;
+    height: 8% ;
+    width: 100%;
+    position: fixed;
+    top: 7%;
+    display:flex;
+    justify-content: space-around;
+
+    &-button{
+        background-color: transparent;
+        color: vars.$white;
+        border: none;
+        transition: color 0.3s ease-in-out;
+        position: relative;
+
+        &:before {
+            content: '';
+            position: absolute;
+            bottom: -2px;
+            left: 0;
+            width: 0%;
+            height: 2px;
+            background-color: vars.$green;
+            transition: width 0.3s ease-in-out;
+          }
+        
+          &:hover:before {
+            width: 100%;
+          }
+        
+          &:hover {
+            color: vars.$green;
+            cursor: pointer;
+          }
+    }
+}
+.scrolled {
+    z-index: 10;
+    background-color: vars.$gray-light;
+    height: 8% ;
+    width: 100%;
+    position: fixed;
+    top: 0;
+    display:flex;
+    justify-content: space-around;
+}

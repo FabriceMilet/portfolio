@@ -1,37 +1,117 @@
-.Home{
-    background-color: #fff;
-    color: antiquewhite;
-    font-size: 3rem;
+@use "../../style/vars";
+
+.Home {
+  font-size: 2rem;
+  color: vars.$white;
+  height: 800px;
+  text-transform: uppercase;
+  background-color: vars.$gray;
+
+  &-container {
+    width: 80vw;
     height: 110vh;
+    margin: auto;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    
+
+    &__top{
+      height: 60%;
+      display: flex;
+    }
+    &__cube{
+      width: 40%;
   
-    &-container{
-        width: 80vw;
-        height: 110vh;
-        margin: auto;
-        background-color: black;
-        display: flex;
-        flex-direction: column;
-        gap: 10%;
     }
+    &__words {
+     display: flex;
+     flex-direction: column;
+     justify-content: center;
+     width: 60%;
+     gap: 10%;
+    
+    }
+
+    &__bottom {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+
     & span {
-        position: relative;
-        animation: cascade 1s ease-in-out forwards;
-    }
-    & span:nth-child(2) {
-        animation-delay: 0.3s;
-      }
-    & span:nth-child(3) {
-        animation-delay: 0.6s;
-      }
-}
-@keyframes cascade {
-    from {
-      top: -50px;
+      position: relative;
       opacity: 0;
+      animation: cascade 1s ease-in-out forwards;
     }
-    to {
-      top: 0;
-      opacity: 1;
+
+    & span:nth-child(2) {
+      animation-delay: 0.3s;
+    }
+
+    & span:nth-child(3) {
+      animation-delay: 0.6s;
+      color: rgba(239, 236, 236, 0.7);
+    }
+
+    & span:nth-child(4) {
+      animation-delay: 0.9s;
     }
   }
- 
+
+  &-button {
+    padding: 0.6rem 1.6rem;
+    border: 2px solid vars.$green;
+    position: relative;
+    overflow: hidden;
+    background-color: transparent;
+    transition: .3s;
+    z-index: 1;
+    font-family: inherit;
+    color: vars.$green;
+    box-shadow: 0 5px 20px rgba(0, 0, 0, 0.2);
+
+    &::before {
+      content: '';
+      width: 0;
+      height: 360%;
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%) rotate(45deg);
+      background: vars.$green;
+      transition: .5s ease;
+      display: block;
+      z-index: -1;
+    }
+
+    &:hover {
+      cursor: pointer;
+      color: vars.$gray;
+  
+      &::before {
+        width: 105%;
+      }
+    }
+  }
+
+  .gray {
+    background-color: vars.$gray;
+  }
+
+  .greenish {
+    background-color: vars.$greenish !important;
+  }
+}
+
+@keyframes cascade {
+  from {
+    top: -50px;
+    opacity: 0;
+  }
+
+  to {
+    top: 0;
+    opacity: 1;
+  }
+}
