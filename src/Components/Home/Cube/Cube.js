@@ -3,16 +3,23 @@ import { useFrame } from '@react-three/fiber'
 import * as THREE from 'three'
 
 export default function Cube({ castShadow, receiveShadow }) {
-  // This reference gives us direct access to the THREE.Mesh object
   const ref = useRef()
 
-  // Subscribe this component to the render-loop, rotate the mesh every frame
-  useFrame((state, delta) => (ref.current.rotation.x += 0.1 * delta))
+  // on gère ici la rotation du cube
+  useFrame((state, delta) => {
+    ref.current.rotation.x += 0.1 * delta;
+    ref.current.rotation.y += 0.1 * delta;
+    })
 
-  // Créer un tableau de textes pour chaque face du cube
-  const texts = ['Fabrice Milet', 'Développeur Web & Mobile', 'Bienvenue sur mon portfolio', 'Contactez moi et discutons', 'Rendez-vous plus bas pour voir mes projets', 'Descendez pour voir ma présentation'];
+  // on crée un tableau de textes pour chaque face du cube
+  const texts = ['Fabrice Milet',
+    'Développeur Web & Mobile',
+    'Bienvenue sur mon portfolio',
+    'Contactez moi et discutons',
+    'Rendez-vous plus bas pour voir mes projets',
+    'Descendez pour voir ma présentation'];
 
-  // Créer un canvas pour chaque face du cube avec le texte et la couleur correspondants
+  // on ccrée les canvas pour chaque face du cube avec le texte et la couleur correspondants
   const canvases = texts.map((text) => {
     const canvas = document.createElement('canvas');
     canvas.width = 500;
@@ -38,18 +45,18 @@ export default function Cube({ castShadow, receiveShadow }) {
     return canvas;
   });
 
-  // Créer un tableau de textures à partir des canvases créés
+  // On crée un tableau de textures à partir des canvas créés
   const textures = canvases.map(canvas => new THREE.CanvasTexture(canvas));
 
-  // Créer un tableau de matériaux pour chaque face du cube
+  // On crée un tableau de matériaux pour chaque face du cube
   const materials = textures.map(texture => new THREE.MeshStandardMaterial({ map: texture }));
 
-  // Créer la géométrie du cube
+  // On crée la géométrie du cube
   const geometry = new THREE.BoxGeometry(4.5, 4.5, 4.5);
 
   return (
     <mesh ref={ref} material={materials} geometry={geometry}
-   />
+    />
   )
 }
 

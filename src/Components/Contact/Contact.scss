@@ -89,6 +89,9 @@
         justify-content: space-around;
         align-items: center;
         padding: 2rem;
+        & input:focus {
+            outline: 3px solid vars.$green;
+        }
 
         &__infos {
             display: flex;
@@ -108,7 +111,12 @@
             & textarea {
                 height: 90%;
                 margin-bottom: 1rem;
+                &:focus{
+                    outline: 3px solid vars.$green;
+                }
+                
             }
+          
         }
 
         &__button {
@@ -187,5 +195,10 @@
     .Contact-phone {
         flex-direction: column;
     }
-
+    .Contact-form {
+        width: 95%;
+    }
+    .Contact-phone__bottom {
+        margin-bottom: 1rem;
+    }
 }
