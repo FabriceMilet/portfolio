@@ -1,5 +1,5 @@
 import { useFrame, useThree } from "@react-three/fiber";
-import { useState, useEffect } from "react";
+import { useState } from "react";
 import { Vector2 } from "three";
 import Logo from "../Logo/Logo";
 

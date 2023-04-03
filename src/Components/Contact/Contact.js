@@ -37,7 +37,7 @@ const Contact = forwardRef(({ className, contactHover}, targetContact ) => {
         <button className="Contact-form__button" type='submit'>Envoyer</button>
       </form>
       <div className="Contact-phone">
-        <div>
+        <div className="Contact-phone__bottom">
          <div className="Contact-phone__text">Par téléphone,</div>
           <div className="Contact-phone__number">au <a href="tel:0781694928">07 81 69 49 28</a></div>
           </div>
