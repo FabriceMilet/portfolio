@@ -175,9 +175,11 @@
   
   @media (max-width: 1024px) {
     .Projects {
+        padding-top: 4rem;
         height: auto;
         &-cards {
             flex-direction: column;
+            gap: 2rem;
         }
     }
    

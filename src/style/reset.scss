@@ -54,3 +54,7 @@
   #root, #__next {
     isolation: isolate;
   }
+
+  *:focus {
+    outline: none;
+  }
