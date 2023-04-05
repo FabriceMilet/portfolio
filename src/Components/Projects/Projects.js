@@ -29,7 +29,8 @@ const Projects = forwardRef(({ className, projectsHover}, targetProjects ) => {
         <section className="Projects-card__info">
           <h3>Get Balanced (front)</h3>
           <p className="Projects-card__text">Partie front d'une application qui aide au partage des tâches ménagères dans un foyer </p>
-          <a href='https://github.com/FabriceMilet/GetBalanced-front' className="Projects-card__link" target="_blank">Cliquez ici pour en savoir plus</a>
+          <a href='https://github.com/FabriceMilet/GetBalanced-front' className="Projects-card__link" target="_blank" rel="noreferrer">
+            Cliquez ici pour en savoir plus</a>
         </section>
       </div>
       
@@ -41,7 +42,8 @@ const Projects = forwardRef(({ className, projectsHover}, targetProjects ) => {
         <section className="Projects-card__info">
           <h3>Get Balanced (back)</h3>
           <p className="Projects-card__text">Construction de l'API d'une application qui aide au partage des tâches ménagères dans un foyer </p>
-          <a href='https://github.com/FabriceMilet/GetBalanced-back' className="Projects-card__link" target="_blank">Cliquez ici pour en savoir plus</a>
+          <a href='https://github.com/FabriceMilet/GetBalanced-back' className="Projects-card__link" target="_blank" rel="noreferrer">
+            Cliquez ici pour en savoir plus</a>
         </section>
       </div>
      
@@ -52,7 +54,8 @@ const Projects = forwardRef(({ className, projectsHover}, targetProjects ) => {
         <section className="Projects-card__info">
           <h3>Mon portfolio</h3>
           <p className="Projects-card__text">Construction de ce portfolio, avec REACT, SCSS (et un peu de three.js pour le fun) </p>
-          <a href='https://github.com/FabriceMilet/portfolio' className="Projects-card__link" target="_blank">Cliquez ici pour en savoir plus</a>
+          <a href='https://github.com/FabriceMilet/portfolio' className="Projects-card__link" target="_blank" rel="noreferrer">
+            Cliquez ici pour en savoir plus</a>
         </section>
       </div>
       
