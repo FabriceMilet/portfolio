@@ -1,5 +1,5 @@
 import './Header.scss'
-
+import cvPdf from "../../pdf/CV_FMilet.pdf"
 
 const Header = (({ className, setContactColor, targetAboutMe, targetProjects, targetContact, setheaderScrolled, setContactHover, setProjectsHover, projectsColor, setAboutMeColor }) => {
 
@@ -23,19 +23,13 @@ const Header = (({ className, setContactColor, targetAboutMe, targetProjects, ta
     setheaderScrolled(true)
     setContactHover(true)
   };
-  const handleClickCV = (event) => {
-    event.preventDefault();
-    window.scroll(0, 6000);
-    setheaderScrolled(true)
-    setContactHover(true)
-  };
 
   return (
     <div className={className}>
-      <button className="Header-button" onClick={handleClickAboutMe}>à propos</button>
-      <button className="Header-button" onClick={handleClickProjects}>mes projets</button>
-      <button className="Header-button" onClick={handleClickContact}>contact</button>
-      <button className="Header-button" onClick={handleClickCV}>CV</button>
+      <button className="Header-button" onClick={handleClickAboutMe}>À propos</button>
+      <button className="Header-button" onClick={handleClickProjects}>Mes projets</button>
+      <button className="Header-button" onClick={handleClickContact}>Contact</button>
+      <a className="Header-button" href={cvPdf} target="_blank" rel="noreferrer">CV</a>
     </div>
   )
   })

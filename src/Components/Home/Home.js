@@ -23,12 +23,12 @@ const Home = forwardRef(({ className, targetContact, projectsColor, targetAboutM
 
   return (
     <div className={className} ref={targetHome}>
+      <div className="Home-bg"></div>
       <div className="Home-container">
         <div className="Home-container__top">
           <div className="Home-container__words">
             <span>Fabrice Milet</span>
             <span>développeur Web & Mobile</span>
-            <span>Bienvenue sur mon portfolio</span>
           </div>
           <div className="Home-container__cube" >
           <Canvas  camera={{ position: [-5, 2, 10], fov: 60 }}>
