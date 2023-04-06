@@ -133,9 +133,12 @@
   &__cube {
       width: 100%;
   }
-  &__bottom {
+  }
+  .Home-button {
     visibility: hidden;
     height: 0;
   }
+   .Home-arrow{
+    margin-right: 3rem;
   }
 }
