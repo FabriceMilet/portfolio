@@ -5,13 +5,20 @@ import { Canvas } from '@react-three/fiber'
 import Cube from './Cube/Cube';
 import { OrbitControls } from '@react-three/drei'
 
-const Home = forwardRef(({ className, targetContact, setContactHover, setheaderScrolled}, targetHome ) => {
+const Home = forwardRef(({ className, targetContact, projectsColor, targetAboutMe, setContactHover, setAboutMeColor, setheaderScrolled}, targetHome ) => {
 
   const handleClickContact = (event) => {
     event.preventDefault();
     targetContact.current.scrollIntoView({ behavior: "smooth" });
     setheaderScrolled(true)
     setContactHover(true)
+  };
+  const handleClickAboutMe = (event) => {
+    event.preventDefault();
+    targetAboutMe.current.scrollIntoView({ behavior: "smooth" });
+    setheaderScrolled(true)
+    if (projectsColor === 'grayish' ){setAboutMeColor('grayish')}
+    if (projectsColor === 'gray' ){setAboutMeColor('gray')}
   };
 
   return (
@@ -35,7 +42,7 @@ const Home = forwardRef(({ className, targetContact, setContactHover, setheaderS
         </div>
         <div className="Home-container__bottom">
           <button className="Home-button" onClick={handleClickContact}>Contactez moi</button>
-          <FaArrowAltCircleDown size={40} />
+          <FaArrowAltCircleDown className="Home-arrow" size={40} onClick={handleClickAboutMe}/>
         </div>
       </div>
     </div>

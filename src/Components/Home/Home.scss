@@ -60,7 +60,9 @@
       animation-delay: 0.9s;
     }
   }
-
+  &-arrow{
+    cursor: pointer;
+  }
   &-button {
     padding: 0.6rem 1.6rem;
     border: 2px solid vars.$green;
