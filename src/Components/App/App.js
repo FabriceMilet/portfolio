@@ -84,8 +84,11 @@ export default function App() {
 
       <Home className={`Home ${homeColor}`} 
       targetContact={targetContact}
+      targetAboutMe={targetAboutMe}
       setContactHover={setContactHover}
       setheaderScrolled={setheaderScrolled}
+      setAboutMeColor={setAboutMeColor}
+      projectsColor={projectsColor}
       ref={targetHome}
        />
       <AboutMe className={`AboutMe ${aboutMeColor}`} ref={targetAboutMe} />
