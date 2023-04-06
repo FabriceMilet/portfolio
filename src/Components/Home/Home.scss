@@ -60,7 +60,9 @@
       animation-delay: 0.9s;
     }
   }
-
+  &-arrow{
+    cursor: pointer;
+  }
   &-button {
     padding: 0.6rem 1.6rem;
     border: 2px solid vars.$green;
@@ -131,9 +133,12 @@
   &__cube {
       width: 100%;
   }
-  &__bottom {
+  }
+  .Home-button {
     visibility: hidden;
     height: 0;
   }
+   .Home-arrow{
+    margin-right: 3rem;
   }
 }
