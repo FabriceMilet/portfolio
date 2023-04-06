@@ -1,24 +1,65 @@
 @use "../../style/vars";
+
 @font-face {
     font-family: 'Lora';
     src: url('../../../public/fonts/Lora/Lora-Regularr.woff2'),
 }
 
 .AboutMe {
-    height: 800px;
+    height: 100vh;
     background-color: vars.$gray;
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
     font-weight: regular;
-    font-size: 1.2rem;
+    font-size: 1.1rem;
 
-    &-presentation {
-        
+    &-presentation__link {
+        color: vars.$white !important;
+        cursor: pointer;
+
+        &:hover {
+            color: vars.$green!important ;
+        }
+
+    }
+
+    &-presentation__resume {
         display: inline-block;
-        width: 70%;
-        margin: auto;
+        width: 900px;
+        margin-left: -25%;
+        margin-top: -10%;
+        background-color: vars.$grayish-light;
+        padding: 2.5rem;
+        border-radius: 5px;
+        color: vars.$white ;
+        line-height: 1.8rem;
+        box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+        letter-spacing: 1px;
+        position: absolute;
+        z-index: 1;
+        margin-bottom: 3.5rem;
+        font-family: "Lora";
+        & h1 {
+            font-family: 'Hariettext';
+            display: inline;
+        }
+
+        & span {
+            color: vars.$green ;
+        }
+
+        & p {
+            margin-bottom: 1rem;
+        }
+    }
+
+    &-presentation__skills {
+        display: inline-block;
+        width: 600px;
+        margin-left: 40%;
+        margin-top: 20%;
         background-color: vars.$grayish-light;
         padding: 2.5rem;
         border-radius: 5px;
@@ -29,19 +70,9 @@
         position: absolute;
         z-index: 1;
 
-        &__resume {
-            margin-bottom: 3.5rem;
-            font-family: "Lora";
-
-            & span {
-                color: vars.$green ;
-            }
-        }
-
-        &__skills h1 {
+        & h1 {
             margin-bottom: 1.5rem;
-            text-align: center;
-
+            
             & span:hover {
                 text-shadow: 0 0 1px #fff, 0 0 2px #fff, 0 0 4px #fff, 0 0 8px #0ff, 0 0 16px #0ff, 0 0 20px #0ff;
             }
@@ -50,19 +81,21 @@
                 margin-right: .8rem;
             }
         }
-        &__skills li {
+
+        & h2 {
+            font-size: 1.3rem;
+            font-family: "Lora";
+            color: vars.$green;
+            margin: .5rem 0 .5rem 0;
+        }
+
+        & p {
             font-family: "Lora";
         }
-
-        &__link {
-            color: vars.$white !important;
-            cursor: pointer;
-
-            &:hover {
-                color: vars.$green!important ;
-            }
-        }
     }
+
+
+
 
     &-canvas {
         position: relative;
@@ -87,8 +120,29 @@
 @media (max-width: 1024px) {
     .AboutMe {
         font-size: 0.9rem;
-        &-presentation {
+        height: 150vh;
+        &-canvas {
+            height: 0;
+        }
+
+        &-presentation__resume {
             width: 100%;
+            margin-left: 0;
+            margin-top: -50vh;
+            // height: 70vh;
+            background-color: transparent;
+            box-shadow:none;
+        }
+        &-presentation__skills {
+            width: 100%;
+            margin-left: 0;
+            margin-top: 80vh;
+            // height: 55vh;
+            background-color: transparent;
+            box-shadow:none;
+            & h2{
+                font-size: 1rem;
+            }
         }
 
         h1 {

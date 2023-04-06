@@ -1,7 +1,7 @@
 @use "../../style/vars";
 
 .Projects {
-    height: 800px;
+    height: 100vh;
     background-color: vars.$grayish;
     display: flex;
     flex-direction: column;

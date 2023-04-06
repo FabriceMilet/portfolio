@@ -3,11 +3,13 @@
     z-index: 10;
     background-color: vars.$gray-lightness;
     height: 8% ;
-    width: 100%;
+    width: 100vw;
     position: fixed;
     top: 7%;
     display:flex;
     justify-content: space-around;
+    align-items: center;
+    font-size: 1.1rem;
 
     &-button{
         background-color: transparent;
@@ -46,4 +48,5 @@
     top: 0;
     display:flex;
     justify-content: space-around;
+    align-items: center;
 }
