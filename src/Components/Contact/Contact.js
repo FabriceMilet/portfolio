@@ -1,6 +1,6 @@
 import './Contact.scss'
 import { forwardRef } from 'react';
-import cvPdf from "../../pdf/CV_F_Milet.pdf"
+import cvPdf from "../../pdf/CV_FMilet.pdf"
 
 const Contact = forwardRef(({ className, contactHover}, targetContact ) => {
   return (
