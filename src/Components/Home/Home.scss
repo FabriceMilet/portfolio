@@ -1,11 +1,22 @@
 @use "../../style/vars";
 
 .Home {
-  font-size: 2.5rem;
+  font-size: 2.8rem;
   color: vars.$white;
   height: 100vh;
   text-transform: uppercase;
   background-color: vars.$gray;
+  &-bg{
+    width: 400px;
+    height: 400px;
+    background-color: vars.$gray-light;
+    border-radius: 50%;
+    z-index: 0;
+    position: absolute;
+    filter: blur(70px);
+    box-shadow: 100px 100px 150px 150px vars.$gray-lightness;
+    animation: move 25s ease-in-out infinite;
+  }
 
   &-container {
     width: 80vw;
@@ -16,7 +27,7 @@
     justify-content: center;
 
     &__top{
-      padding-top: 10%;
+      padding-top: 13%;
       flex-grow: 1;
       height: 60%;
       display: flex;
@@ -30,7 +41,7 @@
      flex-direction: column;
      justify-content: center;
      width: 60%;
-     gap: 12%;
+     gap: 17%;
     
     }
 
@@ -48,22 +59,17 @@
     }
 
     & span:nth-child(2) {
-      animation-delay: 0.3s;
-    }
-
-    & span:nth-child(3) {
       animation-delay: 0.6s;
       color: rgba(239, 236, 236, 0.7);
-    }
-
-    & span:nth-child(4) {
-      animation-delay: 0.9s;
     }
   }
   &-arrow{
     cursor: pointer;
   }
   &-button {
+    opacity: 0;
+    animation: cascade 1s ease-in-out forwards;
+    animation-delay: 1s;
     padding: 0.6rem 1.6rem;
     border: 2px solid vars.$green;
     position: relative;
@@ -111,7 +117,7 @@
 
 @keyframes cascade {
   from {
-    top: -50px;
+    top: -60px;
     opacity: 0;
   }
 
@@ -120,11 +126,28 @@
     opacity: 1;
   }
 }
+@keyframes move {
+  0% {
+    transform: translate(0, 0);
+  }
+  25% {
+    transform: translateX(100%);
+  }
+  50% {
+    transform: translate(100%, 80%);
+  }
+  75% {
+    transform: translateX(0%);
+  }
+  100% {
+    transform: translate(0, 0);
+  }
+}
 @media (max-width: 1024px) {
   .Home-container{
     padding-top: 10%;
     width: 100vw;
-    height: auto;
+    height: 100vh;
 
   &__words{
     width: 0;
@@ -133,6 +156,10 @@
   &__cube {
       width: 100%;
   }
+  }
+  .Home-bg{
+    width: 0;
+    height: 0;
   }
   .Home-button {
     visibility: hidden;
