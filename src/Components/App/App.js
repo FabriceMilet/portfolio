@@ -14,6 +14,7 @@ export default function App() {
 
   // State qui va gérer le bgc des composants suivant le scroll
   const [homeColor, setHome] = useState('')
+  const [bgColor, setBgColor] = useState('')
   const [aboutMeColor, setAboutMeColor] = useState('')
   const [projectsColor, setProjectsColor] = useState('')
   const [contactColor, setContactColor] = useState('')
@@ -28,15 +29,18 @@ export default function App() {
 
   const handleScroll = () => {
     if (window.scrollY < 100) {
+      setBgColor('gray');
       setHome('gray');
       setAboutMeColor('gray')
       setheaderScrolled(false)
     }
     else if (window.scrollY > 100 && window.scrollY < 400) {
+      setBgColor('gray');
       setHome('gray');
       setAboutMeColor('gray')
       setheaderScrolled(true)
     } else if (window.scrollY > 400 && window.scrollY < 800) {
+      setBgColor('grayish');
       setHome('grayish');
       setAboutMeColor('grayish')
       setProjectsColor('grayish')
@@ -46,6 +50,7 @@ export default function App() {
       setProjectsHover(true)
     }
     else if (window.scrollY > 800 && window.scrollY < 1500) {
+      setBgColor('greenish');
       setAboutMeColor('greenish')
       setProjectsColor('greenish')
       console.log('ok2');
@@ -54,12 +59,14 @@ export default function App() {
       setContactHover(true)
     }
      else if (window.scrollY > 1500 && window.scrollY < 2000) {
+      setBgColor('grayish');
       setAboutMeColor('grayish')
       setProjectsColor('grayish')
       setContactColor('grayish')
       console.log('ok3');
     }
     else if (window.scrollY > 2000) {
+      setBgColor('gray');
       setProjectsColor('gray')
       setContactColor('gray')
     };
@@ -82,19 +89,20 @@ export default function App() {
       projectsColor={projectsColor}
       />
 
-      <Home className={`Home ${homeColor}`} 
+      <Home className={`Home ${bgColor}`} 
       targetContact={targetContact}
       targetAboutMe={targetAboutMe}
       setContactHover={setContactHover}
       setheaderScrolled={setheaderScrolled}
       setAboutMeColor={setAboutMeColor}
       projectsColor={projectsColor}
+      setBgColor={setBgColor}
       ref={targetHome}
        />
-      <AboutMe className={`AboutMe ${aboutMeColor}`} ref={targetAboutMe} />
-      <Projects className={`Projects ${projectsColor}`}
+      <AboutMe className={`AboutMe ${bgColor}`} ref={targetAboutMe} />
+      <Projects className={`Projects ${bgColor}`}
         projectsHover={projectsHover} ref={targetProjects} />
-      <Contact className={`Contact ${contactColor}`}
+      <Contact className={`Contact ${bgColor}`}
         contactHover={contactHover} ref={targetContact} />
 
     </div>
