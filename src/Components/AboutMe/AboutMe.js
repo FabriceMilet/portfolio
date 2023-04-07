@@ -17,7 +17,6 @@ const AboutMe = forwardRef(({ className}, targetAboutMe ) => {
         <p><span className="AboutMe-presentation__link"> Contactez moi</span>, je vous répondrai très rapidement !</p>
         </div>
         
-        
         <div className="AboutMe-presentation__skills">
           <h1><span>M</span><span>e</span><span>s</span>
            <span>c</span><span>o</span><span>m</span><span>p</span><span>é</span><span>t</span><span>e</span><span>n</span><span>c</span><span>e</span><span>s</span>
@@ -30,8 +29,7 @@ const AboutMe = forwardRef(({ className}, targetAboutMe ) => {
           <h2>Compétences techniques générales, gestion de projets</h2>
           <p>Git / GitHub, Méthodes agiles, SCRUM</p>
           </div>
-          
-        
+           
       </div>
       <div className="AboutMe-canvas">
       <Canvas>

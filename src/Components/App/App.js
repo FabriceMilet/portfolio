@@ -13,11 +13,7 @@ export default function App() {
   const targetHome = useRef(null);
 
   // State qui va gérer le bgc des composants suivant le scroll
-  const [homeColor, setHome] = useState('')
   const [bgColor, setBgColor] = useState('')
-  const [aboutMeColor, setAboutMeColor] = useState('')
-  const [projectsColor, setProjectsColor] = useState('')
-  const [contactColor, setContactColor] = useState('')
   const [headerScrolled, setheaderScrolled] = useState(false)
   // State qui va gérer l'apparition des titres
   const [projectsHover, setProjectsHover] = useState(false)
@@ -27,84 +23,85 @@ export default function App() {
     targetHome.current.scrollIntoView({ behavior: "smooth" });
   }, []);
 
+
+  const x = window.innerHeight;
+
   const handleScroll = () => {
     if (window.scrollY < 100) {
       setBgColor('gray');
-      setHome('gray');
-      setAboutMeColor('gray')
       setheaderScrolled(false)
     }
-    else if (window.scrollY > 100 && window.scrollY < 400) {
+    else if (window.scrollY > 100 && window.scrollY < x / 2) {
       setBgColor('gray');
-      setHome('gray');
-      setAboutMeColor('gray')
       setheaderScrolled(true)
-    } else if (window.scrollY > 400 && window.scrollY < 800) {
-      setBgColor('grayish');
-      setHome('grayish');
-      setAboutMeColor('grayish')
-      setProjectsColor('grayish')
-      console.log('ok1');
-
-    } else if (window.scrollY > 1100 && window.scrollY < 1500) {
-      setProjectsHover(true)
+      console.log('home en gray');
     }
-    else if (window.scrollY > 800 && window.scrollY < 1500) {
+    else if (window.scrollY > x / 2 && window.scrollY < x) {
+      setBgColor('grayish');
+      setheaderScrolled(true)
+      console.log('entre home et about en grayish');
+    }
+    else if (window.scrollY > x && window.scrollY < (x + x/2)) {
       setBgColor('greenish');
-      setAboutMeColor('greenish')
-      setProjectsColor('greenish')
-      console.log('ok2');
+      setheaderScrolled(true)
+      console.log('about en greenish');
     }
-    else if (window.scrollY > 1800 && window.scrollY < 2000) {
-      setContactHover(true)
-    }
-     else if (window.scrollY > 1500 && window.scrollY < 2000) {
+    else if (window.scrollY > (x + x/2) && window.scrollY < 2*x) {
       setBgColor('grayish');
-      setAboutMeColor('grayish')
-      setProjectsColor('grayish')
-      setContactColor('grayish')
-      console.log('ok3');
+      setheaderScrolled(true)
+      setProjectsHover(true)
+      console.log('entre about et project en grayish');
     }
-    else if (window.scrollY > 2000) {
+    else if (window.scrollY > 2*x && window.scrollY < (x*2 + x/2)) {
       setBgColor('gray');
-      setProjectsColor('gray')
-      setContactColor('gray')
-    };
+      setheaderScrolled(true)
+      console.log('project en gray');
+    }
+    else if (window.scrollY > (x*2 + x/2) && window.scrollY < 3*x) {
+      setBgColor('grayish');
+      setheaderScrolled(true)
+      setContactHover(true)
+      console.log('entre project et contact en grayish', window.scrollY);
+    }
+    else if (window.scrollY > 3*x && window.scrollY < (x*3 + x/2)) {
+      setBgColor('greenish');
+      setheaderScrolled(true)
+      console.log('contact en greenish');
+    }
+    else if (window.scrollY > (x*3 + x/2)) {
+      setBgColor('grayish');
+      setheaderScrolled(true)
+      console.log('contact en grayish');
+    }
   }
 
   window.addEventListener('scroll', handleScroll);
 
   return (
     <div className='App'>
-    
-      <Header className={!headerScrolled ? 'Header' : 'scrolled'} 
-      targetAboutMe={targetAboutMe}
-      targetProjects={targetProjects}
-      targetContact={targetContact}
-      setheaderScrolled={setheaderScrolled}
-      setProjectsHover={setProjectsHover}
-      setContactHover={setContactHover}
-      setContactColor={setContactColor}
-      setAboutMeColor={setAboutMeColor}
-      projectsColor={projectsColor}
+      <Header className={!headerScrolled ? 'Header' : 'scrolled'}
+        targetAboutMe={targetAboutMe}
+        targetProjects={targetProjects}
+        targetContact={targetContact}
+        setheaderScrolled={setheaderScrolled}
+        setProjectsHover={setProjectsHover}
+        setContactHover={setContactHover}
+        setBgColor={setBgColor}
+        bgColor={bgColor}
       />
-
-      <Home className={`Home ${bgColor}`} 
-      targetContact={targetContact}
-      targetAboutMe={targetAboutMe}
-      setContactHover={setContactHover}
-      setheaderScrolled={setheaderScrolled}
-      setAboutMeColor={setAboutMeColor}
-      projectsColor={projectsColor}
-      setBgColor={setBgColor}
-      ref={targetHome}
-       />
+      <Home className={`Home ${bgColor}`}
+        targetContact={targetContact}
+        targetAboutMe={targetAboutMe}
+        setContactHover={setContactHover}
+        setheaderScrolled={setheaderScrolled}
+        setBgColor={setBgColor}
+        ref={targetHome}
+      />
       <AboutMe className={`AboutMe ${bgColor}`} ref={targetAboutMe} />
       <Projects className={`Projects ${bgColor}`}
         projectsHover={projectsHover} ref={targetProjects} />
       <Contact className={`Contact ${bgColor}`}
         contactHover={contactHover} ref={targetContact} />
-
     </div>
   )
 };
