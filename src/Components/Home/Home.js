@@ -5,7 +5,7 @@ import { Canvas } from '@react-three/fiber'
 import Cube from './Cube/Cube';
 import { OrbitControls } from '@react-three/drei'
 
-const Home = forwardRef(({ className, targetContact, projectsColor, targetAboutMe, setContactHover, setAboutMeColor, setheaderScrolled}, targetHome ) => {
+const Home = forwardRef(({ className, targetContact, targetAboutMe, setContactHover, setheaderScrolled}, targetHome ) => {
 
   const handleClickContact = (event) => {
     event.preventDefault();
@@ -17,8 +17,6 @@ const Home = forwardRef(({ className, targetContact, projectsColor, targetAboutM
     event.preventDefault();
     targetAboutMe.current.scrollIntoView({ behavior: "smooth" });
     setheaderScrolled(true)
-    if (projectsColor === 'grayish' ){setAboutMeColor('grayish')}
-    if (projectsColor === 'gray' ){setAboutMeColor('gray')}
   };
 
   return (
