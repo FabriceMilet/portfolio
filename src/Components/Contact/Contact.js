@@ -25,14 +25,14 @@ const Contact = forwardRef(({ className, contactHover}, targetContact ) => {
         <input type="hidden" name='form-name' value='contact' />
         <div className="Contact-form__infos" >
           <label className="Contact-form__label" htmlFor="name"> Nom  </label>
-          <input className="Contact-form__input" type="text" name="name" />
+          <input className="Contact-form__input" type="text" name="name" required/>
 
           <label className="Contact-form__label" htmlFor="email"> Email  </label>
-          <input className="Contact-form__input" type="email" name="email" />
+          <input className="Contact-form__input" type="email" name="email" required />
         </div>
         <div className="Contact-form__message">
           <label className="Contact-form__label" htmlFor="message"> Message  </label>
-          <textarea className="Contact-form__input" name="message" />
+          <textarea className="Contact-form__input" name="message" required/>
         </div>
         <button className="Contact-form__button" type='submit'>Envoyer</button>
       </form>
