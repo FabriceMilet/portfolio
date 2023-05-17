@@ -23,9 +23,9 @@ const AboutMe = forwardRef(({ className}, targetAboutMe ) => {
            </h1>
            <div>
             <h2>Front-end</h2>
-          <p>HTML, CSS, SASS/SCSS, JavaScript, REACT, Redux</p>
+          <p>HTML, CSS, SASS/SCSS, JavaScript, REACT, Next.js</p>
           <h2>Back-end</h2>
-          <p>Node.JS, Express, API REST, SQL, PostgreSQL</p>
+          <p>Node.JS, Express, Strapi, API REST, SQL, PostgreSQL</p>
           <h2>Compétences techniques générales, gestion de projets</h2>
           <p>Git / GitHub, Méthodes agiles, SCRUM</p>
           </div>
