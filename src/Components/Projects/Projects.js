@@ -1,7 +1,7 @@
 import './Projects.scss'
 import getBalanced from '../../img/getBalanced.png'
 import portfolio from '../../img/portfolio.png'
-import getBalancedBack from '../../img/getBalancedBack.png'
+import trouveLaCompo from '../../img/trouveLaCompo.png'
 import { forwardRef } from 'react';
 
 const Projects = forwardRef(({ className, projectsHover}, targetProjects ) => {
@@ -27,23 +27,28 @@ const Projects = forwardRef(({ className, projectsHover}, targetProjects ) => {
           <img src={getBalanced} alt="Project getBalanced"/>
         </div>
         <section className="Projects-card__info">
-          <h3>Get Balanced (front)</h3>
-          <p className="Projects-card__text">Partie front d'une application qui aide au partage des tâches ménagères dans un foyer </p>
-          <a href='https://github.com/FabriceMilet/GetBalanced-front' className="Projects-card__link" target="_blank" rel="noreferrer">
-            Cliquez ici pour en savoir plus</a>
+          <h3>Get Balanced</h3>
+          <p className="Projects-card__text">Application qui aide au partage des tâches ménagères dans un foyer </p>
+          <a href='https://github.com/FabriceMilet/GetBalanced-front' className="Projects-card__link1" target="_blank" rel="noreferrer">
+          Aller voir le github</a>
+          <a href='https://getbalanced.netlify.app/' className="Projects-card__link2" target="_blank" rel="noreferrer">
+            Visiter le site</a>
+       
         </section>
       </div>
       
     
       <div className="Projects-card">
         <div className="Projects-card__img">
-          <img src={getBalancedBack} alt="Project getBalanced"/>
+          <img src={trouveLaCompo} alt="Project getBalanced"/>
         </div>
         <section className="Projects-card__info">
-          <h3>Get Balanced (back)</h3>
-          <p className="Projects-card__text">Construction de l'API d'une application qui aide au partage des tâches ménagères dans un foyer </p>
-          <a href='https://github.com/FabriceMilet/GetBalanced-back' className="Projects-card__link" target="_blank" rel="noreferrer">
-            Cliquez ici pour en savoir plus</a>
+          <h3>Trouve la compo</h3>
+          <p className="Projects-card__text">Application de jeu de foot, le but est de trouver la composition de matchs passés </p>
+          <a href='https://github.com/FabriceMilet/quizFoot-front' className="Projects-card__link1" target="_blank" rel="noreferrer">
+          Aller voir le github</a>
+          <a href='https://trouve-la-compo.netlify.app/' className="Projects-card__link2" target="_blank" rel="noreferrer">
+            Visiter le site</a>
         </section>
       </div>
      
@@ -54,8 +59,8 @@ const Projects = forwardRef(({ className, projectsHover}, targetProjects ) => {
         <section className="Projects-card__info">
           <h3>Mon portfolio</h3>
           <p className="Projects-card__text">Construction de ce portfolio, avec REACT, SCSS (et un peu de three.js pour le fun) </p>
-          <a href='https://github.com/FabriceMilet/portfolio' className="Projects-card__link" target="_blank" rel="noreferrer">
-            Cliquez ici pour en savoir plus</a>
+          <a href='https://github.com/FabriceMilet/portfolio' className="Projects-card__link2" target="_blank" rel="noreferrer">
+          Aller voir le github</a>
         </section>
       </div>
       
