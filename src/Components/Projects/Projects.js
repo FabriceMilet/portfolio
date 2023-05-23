@@ -31,7 +31,7 @@ const Projects = forwardRef(({ className, projectsHover}, targetProjects ) => {
           <p className="Projects-card__text">Application qui aide au partage des tâches ménagères dans un foyer </p>
           <a href='https://github.com/FabriceMilet/GetBalanced-front' className="Projects-card__link1" target="_blank" rel="noreferrer">
           Aller voir le github</a>
-          <a href='https://getbalanced.netlify.app/' className="Projects-card__link2" target="_blank" rel="noreferrer">
+          <a href='https://get-balanced.netlify.app/' className="Projects-card__link2" target="_blank" rel="noreferrer">
             Visiter le site</a>
        
         </section>
